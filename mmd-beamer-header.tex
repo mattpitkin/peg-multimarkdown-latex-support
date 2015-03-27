@@ -18,15 +18,52 @@
 \usepackage{hyperref}
 \usepackage{enumerate}
 
+
 \usepackage{framed}			% Allow background color for images
 \definecolor{shadecolor}{named}{white}
 
 
 \usepackage{subfigure}
 
-\usefonttheme[onlymath]{serif}
+\usefonttheme[onlymath]{serif}  % use a serif font for maths
 
 \let\oldSubtitle\subtitle
+
+% add functionality to have coloured under and over braces on math (see http://tex.stackexchange.com/questions/103325/colored-underbraces-for-annotating-equations)
+\usepackage{xcolor}
+\usepackage{mathtools}
+
+\makeatletter
+% add red underbraces
+\newcommand{\redub}{}
+\def\redub#1{%
+  \@ifnextchar_%
+    {\@redub{#1}}
+    {\@latex@warning{Missing argument for \string\redub}\@redub{#1}_{}}%
+}
+\def\@redub#1_#2{%
+    \colorlet{currentcolor}{.}%
+    \color{red}%
+    \underbrace{\color{currentcolor}#1}_{\color{red}#2}%
+    \color{currentcolor}%
+}
+\makeatother
+
+% add red overbraces
+\makeatletter
+\newcommand{\redob}{}
+\def\redob#1{%
+  \@ifnextchar^%
+    {\@redob{#1}}
+    {\@latex@warning{Missing argument for \string\redob}\@redob{#1}^{}}%
+}
+\def\@redob#1^#2{%
+    \colorlet{currentcolor}{.}%
+    \color{red}%
+    \overbrace{\color{currentcolor}#1}^{\color{red}#2}%
+    \color{currentcolor}%
+}
+\makeatother
 
 
 % Configure default metadata
