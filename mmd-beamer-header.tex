@@ -18,18 +18,20 @@
 \usepackage{hyperref}
 \usepackage{enumerate}
 
-% allow lines to strikethrough equations
-\usepackage[thicklines]{cancel}
-
 \usepackage{framed}			% Allow background color for images
 \definecolor{shadecolor}{named}{white}
 
 
 \usepackage{subfigure}
 
-\usefonttheme[onlymath]{serif}  % use a serif font for maths
-
 \let\oldSubtitle\subtitle
+
+%%% Define by Matt Pitkin %%%
+
+% allow lines to strikethrough equations
+\usepackage[thicklines]{cancel}
+
+\usefonttheme[onlymath]{serif}  % use a serif font for maths
 
 % add functionality to have coloured under and over braces on math (see http://tex.stackexchange.com/questions/103325/colored-underbraces-for-annotating-equations)
 \usepackage{xcolor}
@@ -68,6 +70,8 @@
 \makeatother
 
 \setbeamertemplate{headline}[default]
+
+%%% END Defined by Matt Pitkin %%%
 
 % Configure default metadata
 \input{mmd-default-metadata}
