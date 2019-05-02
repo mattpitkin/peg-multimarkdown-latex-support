@@ -17,6 +17,8 @@
 \usepackage{amsmath}
 \usepackage{hyperref}
 \usepackage{enumerate}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
 
 \usepackage{framed}			% Allow background color for images
 \definecolor{shadecolor}{named}{white}
@@ -28,13 +30,27 @@
 
 %%% Define by Matt Pitkin %%%
 
+% allow fancy boxes around equations (see https://tex.stackexchange.com/a/288326/21414)
+% allow fancy boxes around equations (see https://tex.stackexchange.com/a/288326/21414)
+\usepackage{xcolor}
+\definecolor{anti-flashwhite}{rgb}{0.95, 0.95, 0.96}  % http://latexcolor.com/
+\definecolor{aurometalsaurus}{rgb}{0.43, 0.5, 0.5}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+
+% set default box
+\newtcbox{\borderedmathbox}{%
+    nobeforeafter, math upper, tcbox raise base,
+    enhanced, colframe=black,
+    colback=anti-flashwhite, boxrule=0.1pt,
+    fuzzy shadow={0.4mm}{-0.4mm}{0mm}{0.025mm}{aurometalsaurus}}
+
 % allow lines to strikethrough equations
 \usepackage[thicklines]{cancel}
 
 \usefonttheme[onlymath]{serif}  % use a serif font for maths
 
 % add functionality to have coloured under and over braces on math (see http://tex.stackexchange.com/questions/103325/colored-underbraces-for-annotating-equations)
-\usepackage{xcolor}
 \usepackage{mathtools}
 
 \makeatletter
