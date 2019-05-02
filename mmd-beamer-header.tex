@@ -39,11 +39,12 @@
 \usepackage[most]{tcolorbox}
 
 % set default box
-\newtcbox{\borderedmathbox}{%
+\newtcbox{\borderedmathbox}[1][]{%
     nobeforeafter, math upper, tcbox raise base,
     enhanced, colframe=black,
     colback=anti-flashwhite, boxrule=0.1pt,
-    fuzzy shadow={0.4mm}{-0.4mm}{0mm}{0.025mm}{aurometalsaurus}}
+    fuzzy shadow={0.4mm}{-0.4mm}{0mm}{0.025mm}{aurometalsaurus},
+    #1}
 
 % allow lines to strikethrough equations
 \usepackage[thicklines]{cancel}
